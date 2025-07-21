@@ -1,0 +1,31 @@
+package javatask;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class writer {
+    public static void main(String[] args) {
+        try {
+            FileWriter fw1 = new FileWriter("output.txt");
+            fw1.write("hello");//write a file in a program
+            fw1.close();
+            System.out.println("success");
+            FileWriter fw2 = new FileWriter("output.txt", true);
+            fw2.write("this is java program");//appending in a file
+            fw2.close();
+            System.out.println("appending mode success");
+            FileReader fr = new FileReader("output.txt");
+            int ch;
+            System.out.println("file");
+            while ((ch = fr.read()) != -1) {
+                System.out.println((char) ch);//read a filE
+            }
+            fr.close();
+        }
+            catch (IOException e) {
+            System.out.println("missing");
+        }
+    }
+}
+
+
